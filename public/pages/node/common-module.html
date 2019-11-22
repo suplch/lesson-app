@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        pre {
+            background: #eeeeee;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>内置模块详解</h1>
+<ul>
+    <li>Url 处理编码解码处理</li>
+    <ul>
+        <li>url 介绍</li>
+        <li>parse</li>
+        <li>format</li>
+    </ul>
+    <li>Query String 查询字符串</li>
+    <ul>
+        <li>parse</li>
+        <li>stringify</li>
+        <li>escape</li>
+        <li>unescape</li>
+    </ul>
+    <li>FS 文件操作</li>
+    <ul>
+        <li>require('fs') 模块</li>
+        <li>fs.existsSync(path) 检查文件是否存在</li>
+        <li>fs.readFile 与 fs.readFileSync(path, encoding)</li>
+        <li>fs.writeFile 与 fs.writeFileSync(path)</li>
+    </ul>
+    <li>Event 事件总线</li>
+    <ul>
+        <li>require('events');</li>
+        <li>events.on(eventName, function(data){})</li>
+        <li>events.emit(eventName, data)</li>
+    </ul>
+    <li>Stream 数据流</li>
+    <ul>
+        <li>fs.createReadStream(path);</li>
+        <li>fs.createWriteStream(path);</li>
+        <li>stream pipe 管道</li>
+        <li>实现一个文件copy</li>
+    </ul>
+    <li>Http (爬虫)</li>
+    <ul>
+        <li>http.get('url', handler)</li>
+        <li>http.request(options)</li>
+        <li>cheerio模块 解析返回的html结果</li>
+    </ul>
+    <li>Promise</li>
+    <ul>
+        <li>让异步操作更简单</li>
+        <li>async await</li>
+    </ul>
+</ul>
+
+
+</body>
+</html>

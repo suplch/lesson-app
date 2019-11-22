@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from 'antd';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import NavHeader from './layout/NavHeader';
+import CenterContent from './layout/center';
+
+const { Footer } = Layout;
+
+class App extends React.Component {
+  render() {
+    return (
+        <Layout className="app_height">
+          <NavHeader/>
+          <CenterContent/>
+          <Footer style={{ padding: '0px' }}>&nbsp;</Footer>
+        </Layout>
+    );
+  }
 }
 
 export default App;
