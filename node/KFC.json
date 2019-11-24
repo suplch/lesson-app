@@ -1,0 +1,29 @@
+[
+  {
+    "name": "主食",
+    "items": [
+      {"name": "泡菜鸡腿堡双人餐", "price": 69.0, "pic": "https://img.4008823823.com.cn/kfcios/Version/699_820687.jpg"},
+      {"name": "泡菜堡薯单人餐", "price": 36.0, "pic": "https://img.4008823823.com.cn/kfcios/Version/688_793370.jpg"},
+      {"name": "泡菜卷鸡柳单人餐", "price": 34.0, "pic": "https://img.4008823823.com.cn/kfcios/Version/688_793371.jpg"},
+      {"name": "芝士培根澳牛堡", "price": 27.0, "pic": "https://img.4008823823.com.cn/kfcios/Version/635_670374.jpg"}
+    ]
+  }, {
+  "name": "茶点",
+    "items": [
+      {"name": "葡式蛋挞经度", "price": 8.0, "pic": "https://img.4008823823.com.cn/kfcios/Version/604_582064.jpg"},
+      {"name": "香脆薯饼", "price": 7.0, "pic": "https://img.4008823823.com.cn/kfcios/Version/604_581424.jpg"},
+      {"name": "安心大油条", "price": 6.5, "pic": "https://img.4008823823.com.cn/kfcios/Version/604_580942.jpg"},
+      {"name": "香甜粟米棒", "price": 8.5, "pic": "https://img.4008823823.com.cn/kfcios/Version/604_585896.jpg"},
+      {"name": "芙蓉荟蔬汤", "price": 8.5, "pic": "https://img.4008823823.com.cn/kfcios/Version/604_581829.jpg"},
+      {"name": "波纹霸王薯条(大)", "price": 14.0, "pic": "https://img.4008823823.com.cn/kfcios/Version/604_585895.jpg"}
+    ]
+  }, {
+    "name": "饮料",
+    "items": [
+      {"name": "百事可乐(中)", "price": 9.5, "pic": "https://img.4008823823.com.cn/kfcios/Version/604_583035.jpg"},
+      {"name": "九龙金玉珍珠奶茶", "price": 14.5, "pic": "https://img.4008823823.com.cn/kfcios/Version/693_805660.jpg"},
+      {"name": "伴柠伴桔鲜果茶", "price": 13.5, "pic": "https://img.4008823823.com.cn/kfcios/Version/609_593800.jpg"},
+      {"name": "九珍果汁饮料", "price": 12.0, "pic": "https://img.4008823823.com.cn/kfcios/Version/604_585877.jpg"}
+    ]
+  }
+]

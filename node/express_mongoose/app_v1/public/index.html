@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="axios.min.js"></script>
+    <script>
+        // 定义一个删除函数
+        function delete_product(product_id) {
+            alert(product_id);
+
+            // axios.get('/product/delete?product_id=' + product_id).then(function (result) {
+            //     console.log(result.data);
+            //     // 如果 code 等于 0 表示 删除成功
+            //     if (result.data.code === 0) {
+            //         // 重新获取最新的产品列表
+            //         getProducts();
+            //     }
+            //
+            // }).catch(function (err) {
+            //     console.error(err);
+            // })
+
+            fetch('/product/delete?product_id=' + product_id).then(async function (response) {
+                console.log(await response.json());
+                getProducts();
+            }).catch(function (err) {
+                console.log(err)
+            });
+        }
+
+        function getProducts() {
+            // 发起 ajax get 请求
+            axios.get('/product/list').then(function (result) {
+                // 打印返回的结果
+                console.log(result);
+                // 判断 如果 code 等于 0 表示 成功拿到数据
+                if (result.data.code === 0) {
+                    // 返回 产品 数据
+                    let products = result.data.products;
+
+                    let tbody = document.getElementById('tbody');
+                    // 首先 清除 tbody 里面原有的内容
+                    tbody.innerHTML = '';
+
+                    // 循环遍历 产品 数据
+                    for (product of products) {
+                        let tr = document.createElement('tr');
+
+                        tr.innerHTML = `
+                            <td>${product.name}</td>
+                            <td>${product.price}</td>
+                            <td>
+                                <img width="100" src="${product.pic}"/>
+                            </td>
+                            <td> <button onclick="delete_product('${product._id}')">删除</button> </td>
+                        `;
+                        tbody.appendChild(tr);
+                        console.log(product.name);
+                    }
+                } else {
+
+                }
+            }).catch(function (err) {
+                // 如果有错误, 打印错误
+                console.error(err);
+            });
+        }
+
+        function addProduct() {
+            let pname = document.getElementById('pname');
+            let price = document.getElementById('price');
+            let pic = document.getElementById('pic');
+
+            axios.post('/product/add', {
+                name: pname.value,
+                price: Number(price.value),
+                pic: pic.value
+            }).then(function (result) {
+                console.log(result.data);
+                pname.value = '';
+                price.value = '';
+                pic.value = '';
+                getProducts()
+            }).catch(function (err) {
+                console.error(err);
+            })
+        }
+
+    </script>
+</head>
+<body>
+<div>
+    <input id="pname" type="text"/>
+    <input id="price" type="number"/>
+    <input id="pic" type="text"/>
+    <button onclick="addProduct()">添加提交</button>
+</div>
+<hr/>
+<button onclick="getProducts()"> 获取产品列表</button>
+<table border="1" width="800" style="border: solid 1px red">
+    <thead>
+        <tr>
+            <th>名称</th>
+            <th>价格</th>
+            <th>图片</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+
+    </tbody>
+</table>
+</body>
+</html>
